@@ -7,7 +7,12 @@ require("dotenv").config();
 const morgan = require("morgan");
 
 const PORT = process.env.PORT;
-let pool = new Pool();
+let pool = new Pool({
+  host: "localhost",
+  database: "practice",
+  password: "161-35-1594",
+  port: 5432,
+});
 
 // middleware // a function help to get req, res between server / client
 app.use(morgan("dev"));
